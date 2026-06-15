@@ -1,6 +1,6 @@
 export default function SearchOpps({ searchTerm, onSearch }) {
   return (
-    <div className="input-group mb-4">
+    <div className=" container input-group mb-4">
       <span className="input-group-text">
         <i className="ti ti-search"></i>
       </span>
