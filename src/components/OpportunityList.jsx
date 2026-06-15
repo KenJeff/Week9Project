@@ -64,6 +64,7 @@ export default function OpportunityList() {
             activities={opportunity.activities}
             dates={opportunity.dates}
             remote={opportunity["remote-or-online"]}
+            url={opportunity.url}
           />
         ))
       )}

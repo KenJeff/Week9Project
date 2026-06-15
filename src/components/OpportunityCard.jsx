@@ -5,21 +5,10 @@ export default function OpportunityCard({
   activities,
   dates,
   remote,
+  url,
 }) {
   // Guard against null or empty activities
   const safeActivities = activities || [];
-
-  //   const categoryCounts = safeActivities.reduce((acc, activity) => {
-  //     acc[activity.category] = (acc[activity.category] || 0) + 1;
-  //     return acc;
-  //   }, {});
-
-  //   const topCategory =
-  //     Object.keys(categoryCounts).length > 0
-  //       ? Object.keys(categoryCounts).reduce((a, b) =>
-  //           categoryCounts[a] > categoryCounts[b] ? a : b,
-  //         )
-  //       : null;
 
   return (
     <div className="container mt-4">
@@ -36,19 +25,9 @@ export default function OpportunityCard({
 
         <div className="card-body">
           <p className="card-text">{description}</p>
-          {/* 
-          {topCategory && (
-            <div className="alert alert-info d-flex justify-content-between align-items-center py-2">
-              <span className="text-muted" style={{ fontSize: "0.875rem" }}>
-                Most common category
-              </span>
-              <span className="badge bg-primary">
-                {topCategory} ({categoryCounts[topCategory]})
-              </span>
-            </div>
-          )} */}
+          <a className="card-text mb-4">{url}</a>
 
-          <h6 className="fw-bold mb-3">Available Activities</h6>
+          <h6 className="fw-bold mb-3 mt-4">Available Activities</h6>
 
           {safeActivities.length === 0 ? (
             <p className="text-muted">
