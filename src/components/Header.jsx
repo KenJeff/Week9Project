@@ -66,13 +66,13 @@ export default function Header({
             <h3 style={{ margin: 0 }}>
               <span
                 style={{
-                  background: C.c1,
-                  color: C.c4,
-                  border: `1px solid ${C.c4}`,
+                  border: `1px solid ${C.c1}`,
                   fontSize: "13px",
                   padding: "4px 14px",
                   borderRadius: "999px",
                   fontWeight: 500,
+                  background: C.c4,
+                  color: C.c1,
                 }}
               >
                 {topCategory}

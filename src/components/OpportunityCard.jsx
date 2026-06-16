@@ -56,7 +56,7 @@ export default function OpportunityCard({
               fontWeight: 500,
               background: remote ? C.c1 : C.c2,
               color: remote ? C.c4 : C.c5,
-              border: remote ? `1px solid ${C.c4}` : `1px solid ${C.c3}`,
+              border: `0.5px solid ${C.c4}`,
             }}
           >
             {remote ? "Remote" : "On-site"}
@@ -162,7 +162,7 @@ export default function OpportunityCard({
                     <td style={{ padding: "6px 10px" }}>
                       <span
                         style={{
-                          fontSize: "15px",
+                          fontSize: "14px",
                           padding: "3px 10px",
                           borderRadius: "999px",
                           background: C.c4,
