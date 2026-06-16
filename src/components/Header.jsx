@@ -1,3 +1,5 @@
+import { C } from "../assets/styles/theme.js";
+
 export default function Header({
   opportunities,
   filteredOpportunities,
@@ -6,33 +8,76 @@ export default function Header({
 }) {
   return (
     <div className="container">
-      <h1 className="mb-4">Volunteer Dashboard</h1>
+      <h1 style={{ color: C.text, fontWeight: 500, marginBottom: "1.5rem" }}>
+        Volunteer Dashboard
+      </h1>
 
       <div className="row g-3 mb-4">
         <div className="col-md-6">
-          <div className="card shadow-sm h-100">
-            <div className="card-body d-flex flex-column justify-content-center text-center">
-              <p className="text-muted mb-1">Displayed Opportunities</p>
-              <h3 className="fw-bold">
-                {filteredOpportunities.length}
-                {searchTerm && (
-                  <small className="text-muted fs-6">
-                    {" "}
-                    of {(opportunities || []).length}
-                  </small>
-                )}
-              </h3>
-            </div>
+          <div
+            style={{
+              background: C.surface,
+              border: `0.5px solid ${C.c2}`,
+              borderRadius: "10px",
+              padding: "1.25rem",
+              textAlign: "center",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <p
+              style={{ color: C.muted, fontSize: "13px", marginBottom: "6px" }}
+            >
+              Displayed Opportunities
+            </p>
+            <h3 style={{ color: C.text, fontWeight: 500, margin: 0 }}>
+              {filteredOpportunities.length}
+              {searchTerm && (
+                <small style={{ color: C.muted, fontSize: "14px" }}>
+                  {" "}
+                  of {(opportunities || []).length}
+                </small>
+              )}
+            </h3>
           </div>
         </div>
+
         <div className="col-md-6">
-          <div className="card shadow-sm h-100">
-            <div className="card-body d-flex flex-column justify-content-center text-center">
-              <p className="text-muted mb-1">Most Popular Category</p>
-              <h3 className="fw-bold">
-                <span className="badge bg-primary">{topCategory}</span>
-              </h3>
-            </div>
+          <div
+            style={{
+              background: C.surface,
+              border: `0.5px solid ${C.c2}`,
+              borderRadius: "10px",
+              padding: "1.25rem",
+              textAlign: "center",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <p
+              style={{ color: C.muted, fontSize: "13px", marginBottom: "6px" }}
+            >
+              Most Popular Category
+            </p>
+            <h3 style={{ margin: 0 }}>
+              <span
+                style={{
+                  background: C.c1,
+                  color: C.c4,
+                  border: `1px solid ${C.c4}`,
+                  fontSize: "13px",
+                  padding: "4px 14px",
+                  borderRadius: "999px",
+                  fontWeight: 500,
+                }}
+              >
+                {topCategory}
+              </span>
+            </h3>
           </div>
         </div>
       </div>

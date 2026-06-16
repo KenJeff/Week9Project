@@ -3,6 +3,7 @@ import OpportunityCard from "./OpportunityCard";
 import SearchOpps from "./SearchOpps";
 import { getTopCategory } from "../lib/opportunityUtils";
 import Header from "./Header";
+import { C } from "../assets/styles/theme.js";
 
 export default function OpportunityList() {
   const [opportunities, setOpportunities] = useState(null);
@@ -43,14 +44,22 @@ export default function OpportunityList() {
         searchTerm={searchTerm}
       />
 
-      {loading && <p>Loading opportunities...</p>}
-      {error && <p>Something went wrong: {error.message}</p>}
+      {loading && (
+        <p style={{ color: C.muted, textAlign: "center", padding: "1rem" }}>
+          Loading opportunities...
+        </p>
+      )}
+      {error && (
+        <p style={{ color: "#f09595", textAlign: "center", padding: "1rem" }}>
+          Something went wrong: {error.message}
+        </p>
+      )}
 
       <SearchOpps searchTerm={searchTerm} onSearch={setSearchTerm} />
 
       {filteredOpportunities.length === 0 && !loading ? (
-        <div className="text-center py-4">
-          <p className="text-muted">
+        <div style={{ textAlign: "center", padding: "2rem" }}>
+          <p style={{ color: C.muted }}>
             No opportunities found matching "{searchTerm}"
           </p>
         </div>
